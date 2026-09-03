@@ -28,6 +28,27 @@
     "text": "Head-to-Head Visual Analysis\n# Sample comparison chart placeholder\n# Nebraska vs SMU Hitting % & Blocks"
   },
   {
+    "objectID": "comparison.html#comparison-overview-1",
+    "href": "comparison.html#comparison-overview-1",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "Comparison Overview",
+    "text": "Comparison Overview\nThis page evaluates core performance statistics between the University of Nebraska Cornhuskers and the SMU Mustangs from recent NCAA Division I play."
+  },
+  {
+    "objectID": "comparison.html#key-performance-comparison",
+    "href": "comparison.html#key-performance-comparison",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "Key Performance Comparison",
+    "text": "Key Performance Comparison\nBelow is a direct statistical breakdown comparing key metrics per set across both programs:\n\n\n\nStatistic\nNebraska\nSMU\n\n\n\n\nKills Per Set\n14.1\n12.9\n\n\nHitting Percentage\n.284\n.267\n\n\nBlocks Per Set\n2.8\n2.7\n\n\nDigs Per Set\n15.2\n12.1\n\n\nAces Per Set\n1.3\n1.7"
+  },
+  {
+    "objectID": "comparison.html#head-to-head-visual-analysis-1",
+    "href": "comparison.html#head-to-head-visual-analysis-1",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "Head-to-Head Visual Analysis",
+    "text": "Head-to-Head Visual Analysis\n\nMetric Comparison Chart\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Constructing stat comparison dataset\nstats_df &lt;- data.frame(\n  Team = rep(c(\"Nebraska\", \"SMU\"), each = 3),\n  Metric = rep(c(\"Kills Per Set\", \"Blocks Per Set\", \"Digs Per Set\"), times = 2),\n  Value = c(14.10, 2.80, 15.21, 12.86, 2.73, 12.10)\n)\n\nggplot(stats_df, aes(x = Metric, y = Value, fill = Team)) +\n  geom_col(position = \"dodge\", width = 0.6) +\n  theme_minimal(base_size = 12) +\n  scale_fill_manual(values = c(\"Nebraska\" = \"#D00000\", \"SMU\" = \"#003366\")) +\n  labs(\n    title = \"Nebraska vs. SMU: Per-Set Performance\",\n    subtitle = \"Comparing Kills, Blocks, and Digs Per Set\",\n    x = \"\",\n    y = \"Average Per Set\",\n    fill = \"Program\"\n  ) +\n  theme(\n    plot.title = element_text(face = \"bold\"),\n    legend.position = \"top\"\n  )\n\n\n\n\n\n\n\nFigure 1: Comparative Analysis: Nebraska vs. SMU Key Per-Set Metrics\n\n\n\n\n\n\n\nEfficiency Scatterplot\n\neff_df &lt;- data.frame(\n  Team = c(\"Nebraska\", \"SMU\"),\n  HittingPct = c(0.284, 0.267),\n  BlocksPerSet = c(2.80, 2.73)\n)\n\nggplot(eff_df, aes(x = HittingPct, y = BlocksPerSet, color = Team, label = Team)) +\n  geom_point(size = 6) +\n  geom_text(vjust = -1.2, fontface = \"bold\") +\n  scale_color_manual(values = c(\"Nebraska\" = \"#D00000\", \"SMU\" = \"#003366\")) +\n  scale_x_continuous(limits = c(0.250, 0.300), labels = scales::percent_format(accuracy = 0.1)) +\n  scale_y_continuous(limits = c(2.5, 3.0)) +\n  theme_minimal() +\n  labs(\n    title = \"Hitting Percentage vs. Net Defense\",\n    x = \"Hitting Percentage (Efficiency)\",\n    y = \"Blocks Per Set\"\n  ) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\nFigure 2: Efficiency Scatterplot Comparison"
+  },
+  {
     "objectID": "project.html",
     "href": "project.html",
     "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
