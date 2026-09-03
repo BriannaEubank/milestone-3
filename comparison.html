@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
+<meta name="author" content="Brianna Eubank">
 <meta name="dcterms.date" content="2026-09-04">
 
-<title>Final Project Plan: NCAA Women’s Volleyball Statistics – NCAA Volleyball Project</title>
+<title>Head-to-Head: Nebraska vs.&nbsp;SMU Volleyball – NCAA Volleyball Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,41 +27,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -132,11 +97,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./project.html" aria-current="page"> 
+    <a class="nav-link" href="./project.html"> 
 <span class="menu-text">Home / Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./comparison.html"> 
+    <a class="nav-link active" href="./comparison.html" aria-current="page"> 
 <span class="menu-text">Nebraska vs SMU</span></a>
   </li>  
 </ul>
@@ -156,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final Project Plan: NCAA Women’s Volleyball Statistics</h1>
+<h1 class="title">Head-to-Head: Nebraska vs.&nbsp;SMU Volleyball</h1>
 </div>
 
 
@@ -166,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Brianna Eubank </p>
           </div>
   </div>
     
@@ -185,57 +150,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-overview-plans" class="level2">
-<h2 class="anchored" data-anchor-id="project-overview-plans">Project Overview &amp; Plans</h2>
-<p>For my final project, I plan to analyze <strong>NCAA Women’s Volleyball match and player statistics</strong> across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions.</p>
+<section id="comparison-overview" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-overview">Comparison Overview</h2>
+<p>This page evaluates performance statistics between <strong>Nebraska</strong> and <strong>SMU</strong> for recent seasons.</p>
 </section>
-<section id="key-variables-of-interest" class="level2">
-<h2 class="anchored" data-anchor-id="key-variables-of-interest">Key Variables of Interest</h2>
-<p>The dataset contains thousands of observations detailing team performance and play-by-play actions sourced from Matt Waite’s repository and public data. The primary variables I plan to explore include:</p>
+<section id="key-statistical-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="key-statistical-metrics">Key Statistical Metrics</h2>
 <ul>
-<li><strong>Kills &amp; Errors:</strong> Measuring offensive efficiency and unforced mistakes.</li>
-<li><strong>Total Attacks &amp; Hitting Percentage:</strong> Evaluating overall offensive production.</li>
-<li><strong>Serve Receive &amp; Digs:</strong> Analyzing defensive stability under pressure.</li>
-<li><strong>Blocks (Solo/Assists):</strong> Gauging net defense effectiveness.</li>
+<li><strong>Hitting Efficiency:</strong> Comparing team kill percentages against unforced errors.</li>
+<li><strong>Defensive Dominance:</strong> Evaluating total blocks per set and serve reception percentages.</li>
+<li><strong>Aces vs.&nbsp;Serving Errors:</strong> Measuring high-risk, high-reward serving stats.</li>
 </ul>
 </section>
-<section id="exploratory-data-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-visualization">Exploratory Data Visualization</h2>
-<p>Below is an exploratory graphic examining the relationship between kills and errors across NCAA divisions:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample exploratory data</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>vb_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">kills =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">5</span>), <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">12</span>, <span class="at">sd =</span> <span class="dv">3</span>)),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">errors =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">division =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Division I"</span>, <span class="st">"Division II"</span>), <span class="at">each =</span> n<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(vb_data, <span class="fu">aes</span>(<span class="at">x =</span> errors, <span class="at">y =</span> kills, <span class="at">color =</span> division)) <span class="sc">+</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"NCAA Volleyball Performance"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Errors"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Kills"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Division"</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-vb-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vb-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="project_files/figure-html/fig-vb-scatterplot-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vb-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: NCAA Volleyball: Kills vs.&nbsp;Errors by Division
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="head-to-head-visual-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="head-to-head-visual-analysis">Head-to-Head Visual Analysis</h2>
+<pre><code># Sample comparison chart placeholder
+# Nebraska vs SMU Hitting % &amp; Blocks</code></pre>
 
 
 </section>

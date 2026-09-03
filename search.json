@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "comparison.html",
+    "href": "comparison.html",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "",
+    "text": "This page evaluates performance statistics between Nebraska and SMU for recent seasons."
+  },
+  {
+    "objectID": "comparison.html#comparison-overview",
+    "href": "comparison.html#comparison-overview",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "",
+    "text": "This page evaluates performance statistics between Nebraska and SMU for recent seasons."
+  },
+  {
+    "objectID": "comparison.html#key-statistical-metrics",
+    "href": "comparison.html#key-statistical-metrics",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "Key Statistical Metrics",
+    "text": "Key Statistical Metrics\n\nHitting Efficiency: Comparing team kill percentages against unforced errors.\nDefensive Dominance: Evaluating total blocks per set and serve reception percentages.\nAces vs. Serving Errors: Measuring high-risk, high-reward serving stats."
+  },
+  {
+    "objectID": "comparison.html#head-to-head-visual-analysis",
+    "href": "comparison.html#head-to-head-visual-analysis",
+    "title": "Head-to-Head: Nebraska vs. SMU Volleyball",
+    "section": "Head-to-Head Visual Analysis",
+    "text": "Head-to-Head Visual Analysis\n# Sample comparison chart placeholder\n# Nebraska vs SMU Hitting % & Blocks"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "",
+    "text": "For my final project, I plan to analyze NCAA Women’s Volleyball match and player statistics across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions."
+  },
+  {
+    "objectID": "project.html#project-overview-plans",
+    "href": "project.html#project-overview-plans",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "",
+    "text": "For my final project, I plan to analyze NCAA Women’s Volleyball match and player statistics across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions."
+  },
+  {
+    "objectID": "project.html#key-variables-of-interest",
+    "href": "project.html#key-variables-of-interest",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "Key Variables of Interest",
+    "text": "Key Variables of Interest\nThe dataset contains thousands of observations detailing team performance and play-by-play actions sourced from Matt Waite’s repository and public data. The primary variables I plan to explore include:\n\nKills & Errors: Measuring offensive efficiency and unforced mistakes.\nTotal Attacks & Hitting Percentage: Evaluating overall offensive production.\nServe Receive & Digs: Analyzing defensive stability under pressure.\nBlocks (Solo/Assists): Gauging net defense effectiveness."
+  },
+  {
+    "objectID": "project.html#exploratory-data-visualization",
+    "href": "project.html#exploratory-data-visualization",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "Exploratory Data Visualization",
+    "text": "Exploratory Data Visualization\nBelow is an exploratory graphic examining the relationship between kills and errors across NCAA divisions:\n\nlibrary(ggplot2)\n\n# Sample exploratory data\nset.seed(42)\nn &lt;- 120\nvb_data &lt;- data.frame(\n  kills = c(rnorm(n/2, mean = 25, sd = 5), rnorm(n/2, mean = 12, sd = 3)),\n  errors = c(rnorm(n/2, mean = 15, sd = 4), rnorm(n/2, mean = 6, sd = 2)),\n  division = rep(c(\"Division I\", \"Division II\"), each = n/2)\n)\n\nggplot(vb_data, aes(x = errors, y = kills, color = division)) +\n  geom_point(size = 2.5, alpha = 0.7) +\n  theme_minimal() +\n  labs(\n    title = \"NCAA Volleyball Performance\",\n    x = \"Errors\",\n    y = \"Kills\",\n    color = \"Division\"\n  )\n\n\n\n\n\n\n\nFigure 1: NCAA Volleyball: Kills vs. Errors by Division"
+  }
+]
