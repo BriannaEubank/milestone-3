@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "comparison.html",
+    "href": "comparison.html",
+    "title": "Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)",
+    "section": "",
+    "text": "title: “Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)” author: “Brianna Eubank” date: “2026-09-04” format: html —"
+  },
+  {
+    "objectID": "comparison.html#match-summary-smu-stuns-no.-2-nebraska",
+    "href": "comparison.html#match-summary-smu-stuns-no.-2-nebraska",
+    "title": "Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)",
+    "section": "Match Summary: SMU Stuns No. 2 Nebraska",
+    "text": "Match Summary: SMU Stuns No. 2 Nebraska\nOn September 3, 2024, SMU swept No. 2 Nebraska in 3 sets (25-23, 25-21, 25-18) at Moody Coliseum. SMU outhit the Huskers .242 to .171 and held a major advantage in service aces (7-1).\n\nTeam Box Score Overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTeam\nKills\nErrors\nTotal Attacks\nHitting %\nAssists\nAces\nDigs\nBlocks\nPoints\n\n\n\n\nSMU\n39\n15\n99\n.242\n35\n7\n43\n10.0\n56.0\n\n\nNebraska\n36\n18\n105\n.171\n35\n1\n36\n9.0\n46.0"
+  },
+  {
+    "objectID": "comparison.html#individual-stat-leaders",
+    "href": "comparison.html#individual-stat-leaders",
+    "title": "Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)",
+    "section": "Individual Stat Leaders",
+    "text": "Individual Stat Leaders\n\nTop Hitters & Attackers\n\n\n\nPlayer\nTeam\nKills\nErrors\nAttacks\nHitting %\nPoints\n\n\n\n\nNaya Shime\nSMU\n9\n6\n28\n.107\n12.5\n\n\nMaya Tabron\nSMU\n9\n2\n24\n.292\n11.0\n\n\nMerritt Beason\nNebraska\n9\n6\n28\n.107\n10.5\n\n\nAndi Jackson\nNebraska\n8\n0\n12\n.667\n12.0\n\n\nNatalie Foster\nSMU\n8\n2\n13\n.462\n15.5\n\n\nHarper Murray\nNebraska\n6\n5\n22\n.045\n7.5\n\n\n\n\n\nPlaymakers & Net Defense Leaders\n\nAssists Leaders: Celia Cullen (SMU) — 29 assists | Bergen Reilly (Nebraska) — 31 assists\nBlock Leaders: Nnedi Okammor (SMU) — 9 blocks | Andi Jackson (Nebraska) — 6 blocks\nAce Leader: Natalie Foster (SMU) — 5 aces"
+  },
+  {
+    "objectID": "comparison.html#match-visualizations",
+    "href": "comparison.html#match-visualizations",
+    "title": "Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)",
+    "section": "Match Visualizations",
+    "text": "Match Visualizations\n\nTeam Performance Comparison\n\nlibrary(ggplot2)\n\nteam_data &lt;- data.frame(\n  Team = rep(c(\"SMU\", \"Nebraska\"), each = 4),\n  Metric = rep(c(\"Kills\", \"Digs\", \"Blocks\", \"Aces\"), times = 2),\n  Count = c(39, 43, 10, 7, 36, 36, 9, 1)\n)\n\nggplot(team_data, aes(x = Metric, y = Count, fill = Team)) +\n  geom_col(position = \"dodge\", width = 0.6) +\n  scale_fill_manual(values = c(\"SMU\" = \"#003366\", \"Nebraska\" = \"#D00000\")) +\n  theme_minimal(base_size = 13) +\n  labs(\n    title = \"SMU vs. #2 Nebraska: Team Totals\",\n    subtitle = \"September 3, 2024 Matchup\",\n    x = \"\",\n    y = \"Total\",\n    fill = \"Team\"\n  ) +\n  theme(plot.title = element_text(face = \"bold\"))\n\n\n\n\n\n\n\nFigure 1: SMU vs Nebraska: Team Box Score Comparison\n\n\n\n\n\n\n\nTop Hitters: Kills vs. Hitting Percentage\n\nhitters &lt;- data.frame(\n  Player = c(\"Naya Shime\", \"Maya Tabron\", \"Natalie Foster\", \"Merritt Beason\", \"Andi Jackson\", \"Harper Murray\"),\n  Team = c(\"SMU\", \"SMU\", \"SMU\", \"Nebraska\", \"Nebraska\", \"Nebraska\"),\n  Kills = c(9, 9, 8, 9, 8, 6),\n  HittingPct = c(0.107, 0.292, 0.462, 0.107, 0.667, 0.045)\n)\n\nggplot(hitters, aes(x = HittingPct, y = Kills, color = Team, label = Player)) +\n  geom_point(size = 5) +\n  geom_text(vjust = -1, fontface = \"bold\", size = 3.5) +\n  scale_color_manual(values = c(\"SMU\" = \"#003366\", \"Nebraska\" = \"#D00000\")) +\n  scale_x_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 0.75)) +\n  scale_y_continuous(limits = c(4, 11)) +\n  theme_minimal(base_size = 12) +\n  labs(\n    title = \"Top Hitters: Attack Volume vs. Efficiency\",\n    x = \"Hitting Percentage\",\n    y = \"Kills\"\n  )\n\n\n\n\n\n\n\nFigure 2: Top Offensive Performers Efficiency Breakdown"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "",
+    "text": "For my final project, I plan to analyze NCAA Women’s Volleyball match and player statistics across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions."
+  },
+  {
+    "objectID": "project.html#project-overview-plans",
+    "href": "project.html#project-overview-plans",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "",
+    "text": "For my final project, I plan to analyze NCAA Women’s Volleyball match and player statistics across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions."
+  },
+  {
+    "objectID": "project.html#key-variables-of-interest",
+    "href": "project.html#key-variables-of-interest",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "Key Variables of Interest",
+    "text": "Key Variables of Interest\nThe dataset contains thousands of observations detailing team performance and play-by-play actions sourced from Matt Waite’s repository and public data. The primary variables I plan to explore include:\n\nKills & Errors: Measuring offensive efficiency and unforced mistakes.\nTotal Attacks & Hitting Percentage: Evaluating overall offensive production.\nServe Receive & Digs: Analyzing defensive stability under pressure.\nBlocks (Solo/Assists): Gauging net defense effectiveness."
+  },
+  {
+    "objectID": "project.html#exploratory-data-visualization",
+    "href": "project.html#exploratory-data-visualization",
+    "title": "Final Project Plan: NCAA Women’s Volleyball Statistics",
+    "section": "Exploratory Data Visualization",
+    "text": "Exploratory Data Visualization\nBelow is an exploratory graphic examining the relationship between kills and errors across NCAA divisions:\n\nlibrary(ggplot2)\n\n# Sample exploratory data\nset.seed(42)\nn &lt;- 120\nvb_data &lt;- data.frame(\n  kills = c(rnorm(n/2, mean = 25, sd = 5), rnorm(n/2, mean = 12, sd = 3)),\n  errors = c(rnorm(n/2, mean = 15, sd = 4), rnorm(n/2, mean = 6, sd = 2)),\n  division = rep(c(\"Division I\", \"Division II\"), each = n/2)\n)\n\nggplot(vb_data, aes(x = errors, y = kills, color = division)) +\n  geom_point(size = 2.5, alpha = 0.7) +\n  theme_minimal() +\n  labs(\n    title = \"NCAA Volleyball Performance\",\n    x = \"Errors\",\n    y = \"Kills\",\n    color = \"Division\"\n  )\n\n\n\n\n\n\n\nFigure 1: NCAA Volleyball: Kills vs. Errors by Division"
+  }
+]

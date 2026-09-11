@@ -1,0 +1,102 @@
+---
+---
+title: "Match Analysis: SMU vs. #2 Nebraska (Sept 3, 2024)"
+author: "Brianna Eubank"
+date: "2026-09-04"
+format: html
+---
+
+## Match Summary: SMU Stuns No. 2 Nebraska
+
+On September 3, 2024, SMU swept No. 2 Nebraska in 3 sets (25-23, 25-21, 25-18) at Moody Coliseum. SMU outhit the Huskers .242 to .171 and held a major advantage in service aces (7-1).
+
+### Team Box Score Overview
+
+| Team | Kills | Errors | Total Attacks | Hitting % | Assists | Aces | Digs | Blocks | Points |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **SMU** | 39 | 15 | 99 | .242 | 35 | 7 | 43 | 10.0 | 56.0 |
+| **Nebraska** | 36 | 18 | 105 | .171 | 35 | 1 | 36 | 9.0 | 46.0 |
+
+---
+
+## Individual Stat Leaders
+
+### Top Hitters & Attackers
+
+| Player | Team | Kills | Errors | Attacks | Hitting % | Points |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Naya Shime** | SMU | 9 | 6 | 28 | .107 | 12.5 |
+| **Maya Tabron** | SMU | 9 | 2 | 24 | .292 | 11.0 |
+| **Merritt Beason** | Nebraska | 9 | 6 | 28 | .107 | 10.5 |
+| **Andi Jackson** | Nebraska | 8 | 0 | 12 | .667 | 12.0 |
+| **Natalie Foster** | SMU | 8 | 2 | 13 | .462 | 15.5 |
+| **Harper Murray** | Nebraska | 6 | 5 | 22 | .045 | 7.5 |
+
+### Playmakers & Net Defense Leaders
+
+* **Assists Leaders:** Celia Cullen (SMU) — 29 assists | Bergen Reilly (Nebraska) — 31 assists
+* **Block Leaders:** Nnedi Okammor (SMU) — 9 blocks | Andi Jackson (Nebraska) — 6 blocks
+* **Ace Leader:** Natalie Foster (SMU) — 5 aces
+
+---
+
+## Match Visualizations
+
+### Team Performance Comparison
+
+```{r}
+#| label: fig-team-stats
+#| fig-cap: "SMU vs Nebraska: Team Box Score Comparison"
+#| message: false
+#| warning: false
+
+library(ggplot2)
+
+team_data <- data.frame(
+  Team = rep(c("SMU", "Nebraska"), each = 4),
+  Metric = rep(c("Kills", "Digs", "Blocks", "Aces"), times = 2),
+  Count = c(39, 43, 10, 7, 36, 36, 9, 1)
+)
+
+ggplot(team_data, aes(x = Metric, y = Count, fill = Team)) +
+  geom_col(position = "dodge", width = 0.6) +
+  scale_fill_manual(values = c("SMU" = "#003366", "Nebraska" = "#D00000")) +
+  theme_minimal(base_size = 13) +
+  labs(
+    title = "SMU vs. #2 Nebraska: Team Totals",
+    subtitle = "September 3, 2024 Matchup",
+    x = "",
+    y = "Total",
+    fill = "Team"
+  ) +
+  theme(plot.title = element_text(face = "bold"))
+```
+
+### Top Hitters: Kills vs. Hitting Percentage
+
+```{r}
+#| label: fig-top-hitters
+#| fig-cap: "Top Offensive Performers Efficiency Breakdown"
+#| message: false
+#| warning: false
+
+hitters <- data.frame(
+  Player = c("Naya Shime", "Maya Tabron", "Natalie Foster", "Merritt Beason", "Andi Jackson", "Harper Murray"),
+  Team = c("SMU", "SMU", "SMU", "Nebraska", "Nebraska", "Nebraska"),
+  Kills = c(9, 9, 8, 9, 8, 6),
+  HittingPct = c(0.107, 0.292, 0.462, 0.107, 0.667, 0.045)
+)
+
+ggplot(hitters, aes(x = HittingPct, y = Kills, color = Team, label = Player)) +
+  geom_point(size = 5) +
+  geom_text(vjust = -1, fontface = "bold", size = 3.5) +
+  scale_color_manual(values = c("SMU" = "#003366", "Nebraska" = "#D00000")) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 0.75)) +
+  scale_y_continuous(limits = c(4, 11)) +
+  theme_minimal(base_size = 12) +
+  labs(
+    title = "Top Hitters: Attack Volume vs. Efficiency",
+    x = "Hitting Percentage",
+    y = "Kills"
+  )
+```

@@ -1,0 +1,51 @@
+---
+title: "Final Project Plan: NCAA Women's Volleyball Statistics"
+author: "Brianna Eubank"
+date: "2026-09-04"
+format: html
+---
+
+## Project Overview & Plans
+
+For my final project, I plan to analyze **NCAA Women's Volleyball match and player statistics** across Division I and Division II spanning recent seasons (2020–2025). The goal is to identify key performance metrics that differentiate top-tier teams and evaluate player impact across positions.
+
+## Key Variables of Interest
+
+The dataset contains thousands of observations detailing team performance and play-by-play actions sourced from Matt Waite's repository and public data. The primary variables I plan to explore include:
+
+* **Kills & Errors:** Measuring offensive efficiency and unforced mistakes.
+* **Total Attacks & Hitting Percentage:** Evaluating overall offensive production.
+* **Serve Receive & Digs:** Analyzing defensive stability under pressure.
+* **Blocks (Solo/Assists):** Gauging net defense effectiveness.
+
+## Exploratory Data Visualization
+
+Below is an exploratory graphic examining the relationship between kills and errors across NCAA divisions:
+
+```{r}
+#| label: fig-vb-scatterplot
+#| fig-cap: "NCAA Volleyball: Kills vs. Errors by Division"
+#| message: false
+#| warning: false
+
+library(ggplot2)
+
+# Sample exploratory data
+set.seed(42)
+n <- 120
+vb_data <- data.frame(
+  kills = c(rnorm(n/2, mean = 25, sd = 5), rnorm(n/2, mean = 12, sd = 3)),
+  errors = c(rnorm(n/2, mean = 15, sd = 4), rnorm(n/2, mean = 6, sd = 2)),
+  division = rep(c("Division I", "Division II"), each = n/2)
+)
+
+ggplot(vb_data, aes(x = errors, y = kills, color = division)) +
+  geom_point(size = 2.5, alpha = 0.7) +
+  theme_minimal() +
+  labs(
+    title = "NCAA Volleyball Performance",
+    x = "Errors",
+    y = "Kills",
+    color = "Division"
+  )
+```
