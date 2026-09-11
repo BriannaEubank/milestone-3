@@ -1,0 +1,75 @@
+---
+title: "Multi-Season Breakdown"
+format: html
+---
+
+Compare player and team trends across the **2021–2022**, **2022–2023**, and **2023–2024** seasons.
+
+::: {.panel-tabset}
+
+## 2023-2024 Season
+
+```
+{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+# Example multi-season dataset visual using diamonds/built-in high-volume data
+diamonds %>%
+  filter(carat > 0.5) %>%
+  ggplot(aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.4, size = 1.2) +
+  geom_smooth(method = "gam", se = FALSE) +
+  scale_color_viridis_d(option = "magma") +
+  theme_dark(base_size = 12) +
+  labs(
+    title = "2023–2024 Performance Metrics",
+    subtitle = "High-Density Performance Trends",
+    x = "Volume / Minutes",
+    y = "Efficiency Rating"
+  )
+
+## 2022-2023 Season
+
+{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Add 2022-2023 specific plot or comparison code here
+
+## 2021-2022 Season
+
+{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Add 2021-2022 specific plot or comparison code here
+
+:::
+`
+
+Markdown
+
+```
+{r}
+#| echo: false
+#| message: false
+
+library(DT)
+
+# Replace with your multi-season dataframe
+datatable(
+  diamonds[1:1000, c("carat", "cut", "color", "clarity", "price")],
+  options = list(pageLength = 10, autoWidth = TRUE),
+  filter = "top",
+  style = "bootstrap4",
+  class = "table-dark table-striped"
+)

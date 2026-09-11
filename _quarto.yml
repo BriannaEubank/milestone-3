@@ -2,10 +2,29 @@ project:
   type: website
 
 website:
-  title: "NCAA Volleyball Project"
+  title: "Sports Analytics | Milestone Project"
   navbar:
+    background: primary
+    search: true
     left:
-      - text: "Home / Overview"
-        href: project.qmd
-      - text: "Nebraska vs SMU"
-        href: comparison.qmd
+      - href: index.qmd
+        text: "Home"
+      - href: project.qmd
+        text: "Multi-Season Overview"
+      - href: seasons.qmd
+        text: "Seasons Breakdown"
+      - href: about.qmd
+        text: "About & Methods"
+    right:
+      - icon: github
+        href: https://github.com/BriannaEubank
+
+format:
+  html:
+    theme: darkly
+    smooth-scroll: true
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    code-tools: true
+    
