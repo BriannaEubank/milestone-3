@@ -1,0 +1,94 @@
+---
+title: "Seasons Breakdown"
+format: html
+---
+
+## Multi-Season Performance & Court Analytics
+
+Explore player performance evolution across seasons alongside court location analytics.
+
+::: {.panel-tabset}
+
+## Skill Profile Radar
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(plotly)
+
+# Define core volleyball metrics (scaled 0 to 100)
+metrics <- c('Kills/Set', 'Blocks/Set', 'Aces/Set', 'Digs/Set', 'Assists/Set', 'Hitting %')
+
+fig <- plot_ly(type = 'scatterpolar', fill = 'toself')
+
+# 2023-2024 Season Profile
+fig <- fig %>% add_trace(
+  r = c(85, 60, 75, 90, 40, 82),
+  theta = metrics,
+  name = '2023–2024 Season'
+)
+
+# 2022-2023 Season Profile
+fig <- fig %>% add_trace(
+  r = c(70, 55, 60, 80, 35, 75),
+  theta = metrics,
+  name = '2022–2023 Season'
+)
+
+fig <- fig %>% layout(
+  polar = list(
+    radialaxis = list(visible = TRUE, range = c(0, 100))
+  ),
+  title = "Multi-Season Skill Profile Comparison",
+  paper_bgcolor = "#1e2229",
+  plot_bgcolor = "#1e2229",
+  font = list(color = "#ffffff")
+)
+
+fig
+```
+
+## Court Attack Map
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(plotly)
+
+# Simulated attack location data (Coordinates corresponding to a 9m x 9m half-court)
+set.seed(42)
+volleyball_shots <- data.frame(
+  x_coord = c(rnorm(800, mean = 2.5, sd = 1.2), rnorm(1200, mean = 6.5, sd = 1.5)), # Zone 4 vs Zone 2 attacks
+  y_coord = c(rnorm(800, mean = 7.0, sd = 1.0), rnorm(1200, mean = 4.5, sd = 1.8)),
+  Result = sample(c("Kill", "In Play", "Error"), 2000, replace = TRUE, prob = c(0.4, 0.45, 0.15))
+)
+
+p_court <- ggplot(volleyball_shots, aes(x = x_coord, y = y_coord, color = Result)) +
+  geom_point(alpha = 0.4, size = 1.2) +
+  # Draw 3-meter (10-foot) attack line
+  geom_hline(yintercept = 3, linetype = "dashed", color = "#ff7b00", linewidth = 1) +
+  scale_color_manual(values = c("Kill" = "#00cc66", "In Play" = "#3399ff", "Error" = "#ff3333")) +
+  scale_x_continuous(limits = c(0, 9), breaks = 0:9) +
+  scale_y_continuous(limits = c(0, 9), breaks = 0:9) +
+  labs(
+    title = "Half-Court Attack Location & Tendency Map",
+    subtitle = "Dashed orange line represents the 3-meter (10ft) line",
+    x = "Court Width (Meters)",
+    y = "Court Length (Meters)"
+  ) +
+  theme_dark(base_size = 12) +
+  theme(
+    panel.background = element_rect(fill = "#1e2229"),
+    plot.background = element_rect(fill = "#1e2229"),
+    text = element_text(color = "white")
+  )
+
+ggplotly(p_court)
+```
+
+:::

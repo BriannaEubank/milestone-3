@@ -1,0 +1,6 @@
+---
+title: "About & Methods"
+---
+
+# About & Methods
+This website was created for the Milestone project.
